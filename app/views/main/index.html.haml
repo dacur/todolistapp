@@ -1,0 +1,31 @@
+%h1 ToDo Lists
+%br
+
+%h3 Create a new list
+
+%input#txtName{:type=>"text", :placeholder=>"List Name"}
+-# %input#txtStat{:type=>"text", :placeholder=>"Longest Stat"}
+
+%select#playerType
+	- @lists.each do |i|
+		%option= i.name
+
+%br
+%button#btnSend Create
+
+%br
+%br
+%a{ :href => "/main/all_lists", :title => "View all lists" } View all lists
+
+-# %h3 Showing all current lists
+-# %table
+-# 	%tr.headers
+-# 		%th Name
+-# 		%th Best Stat
+-# 		%th Position
+-# 	#showPlayers
+-# 		- @teams.each do |i|
+-# 			%tr
+-# 				%td= i.name
+-# 				%td= i.stat
+-# 				%td= i.option

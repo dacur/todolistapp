@@ -1,0 +1,13 @@
+%h1 Create a new item
+%br
+
+%h3 Choose the list from the dropdown
+
+%input#itemText{:type=>"text", :placeholder=>"List item"}
+
+%select#listSelect
+	- @lists.each do |i|
+		%option#selected= i.name
+
+%br
+%button#btnCreate Create

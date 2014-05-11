@@ -26,4 +26,29 @@ $(document).ready(function(){
 			data: {name: name}
 		});
 	};
+
+	var itemval = $('#itemText').val();
+
+	$('#btnCreate').click(function(){
+			DoMore();
+			console.log("You pressed create item button");
+			// console.log("Textval =" + textval);
+			// if (isNaN(textval)){
+			// 	console.log("Is not a number");
+			// } else {
+			// 	console.log("Is a number");
+			// };
+
+	});
+
+	function DoMore(itemval){
+		var listID = $('#selected').val();
+		var stuff = $('#itemText').val();
+
+		$.ajax({
+			url: '/main/saveitem',
+			type: 'POST',
+			data: {listID: listID, stuff: stuff}
+		});
+	};
 });

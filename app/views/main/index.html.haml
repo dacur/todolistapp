@@ -6,9 +6,9 @@
 %input#txtName{:type=>"text", :placeholder=>"List Name"}
 -# %input#txtStat{:type=>"text", :placeholder=>"Longest Stat"}
 
-%select#playerType
-	- @lists.each do |i|
-		%option= i.name
+-# %select#listSelect
+-# 	- @lists.each do |i|
+-# 		%option= i.name
 
 %br
 %button#btnSend Create
@@ -16,6 +16,10 @@
 %br
 %br
 %a{ :href => "/main/all_lists", :title => "View all lists" } View all lists
+
+%br
+%br
+%a{ :href => "/main/create_items", :title => "Create new items" } Create new items
 
 -# %h3 Showing all current lists
 -# %table

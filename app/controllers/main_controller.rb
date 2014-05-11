@@ -4,13 +4,13 @@ class MainController < ApplicationController
 		@lists = List.all
 	end
 
-	def create
+	# def create
 
-	end
+	# end
 
-	def show
+	# def show
 
-	end
+	# end
 
 	def all_lists
 		@lists = List.all
@@ -28,6 +28,30 @@ class MainController < ApplicationController
 
 		head :ok
 		
+	end
+
+	def all_items
+		@items = Item.all
+	end
+
+	def saveitem
+		listID = params[:listID]
+		stuff = params[:stuff]
+
+		i = Item.new(listID: listID, stuff: stuff)
+
+		i.save
+			
+		render json: i
+
+		head :ok
+		
+	end
+
+	def create_items
+		@items = Item.all
+		@lists = List.all
+
 	end
 
 

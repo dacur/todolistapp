@@ -8,7 +8,13 @@ Rails.application.routes.draw do
 
   get 'main/all_lists'
 
+  get 'main/create_items'
+
   post 'main/savelist'
+  # get 'main/savelist'
+
+  post 'main/saveitem'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
